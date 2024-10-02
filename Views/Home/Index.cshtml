@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4"> Hello ivan -> hands on secure coding</h1>
+    <p>secure coding with ASP>NET MVC</p>
+     <p>Username: @ViewBag.username</p>
+     <ul>Fruits:
+        @foreach (var fruit in ViewBag.fruits)
+        {
+            <li>@fruit</li>
+        }
+        </ul>
+     </div>
