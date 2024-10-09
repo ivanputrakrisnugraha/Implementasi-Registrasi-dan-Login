@@ -11,4 +11,6 @@ public class ApplicationDbContext : DbContext
 {
 }
 public DbSet<Student> Students { get; set; } = null!;
+    public object Users { get; internal set; }
+    public object User { get; internal set; }
 }

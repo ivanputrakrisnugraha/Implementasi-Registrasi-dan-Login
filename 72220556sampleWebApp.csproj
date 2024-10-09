@@ -9,5 +9,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="*"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8"/>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3"/>
   </ItemGroup>
 </Project>

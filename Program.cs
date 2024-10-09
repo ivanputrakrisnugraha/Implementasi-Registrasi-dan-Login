@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using _72220556sampleWebApp.data;
+using _72220556sampleWebApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
     option.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IStudent, StudentData>();
+builder.Services.AddScoped<IUser, UserData>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

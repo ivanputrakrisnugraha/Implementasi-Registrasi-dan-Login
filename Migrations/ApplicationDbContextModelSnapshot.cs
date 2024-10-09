@@ -3,33 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _72220556sampleWebApp.data;
-
-#nullable disable
-
-namespace _72220556sampleWebApp.Migrations
+using SampleSecureWeb.Models;
+namespace _72220556sampleWebApp.Migrations;
+public class ApplicationDbContext : DbContext
+ {
+public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base (options)
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
-    {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
-#pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
-
-            modelBuilder.Entity("SampleSecureWeb.Models.Student", b =>
-                {
-                    b.Property<string>("Nim")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Nim");
-
-                    b.ToTable("Students");
-                });
-#pragma warning restore 612, 618
-        }
-    }
 }
+
+public DbSet<Student> Students { get; set; } = null!;
+public DbSet<User> Users { get; set; } = null!;
+}   
+   
